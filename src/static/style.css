@@ -6,7 +6,7 @@
 
 body{
     height : 100vh;
-    /* background-color: var(--background); */
+    background-color: var(--background);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,10 +63,19 @@ span{
     display : flex;
     flex-wrap: wrap;
     justify-content: center;
+    transition: 0.5s;
+}
+
+.buttons.click{
+    opacity: 0;
+}
+
+.buttons.clear{
+    opacity: 0;
 }
 
 .button{
-    background-color: #5c4a5a;;
+    background-color: #5c4a5a;
     color :white;
     margin : 2%;
     display : inline-block;
@@ -81,10 +90,47 @@ span{
     width : 50px;
     height : 50px;
     border-radius: 10px;    
+    transition: 0.25s;
+}
+
+.button:hover{
+    background-color: #362935;
 }
 
 .button.guessed{
     color :white;
     background-color: #580f50;
     box-shadow: inset 5px 5px 3px 3px rgb(32, 32, 32, 0.3);
+}
+
+.waiting{
+    color : white;
+    font-size: 42px;
+    font-style: italic;
+}
+
+#resetBtn{
+    background-color: transparent;
+    color :white;
+    margin : 2%;
+    border : none;
+    display : inline-block;
+    padding : 15px;
+    width : 100px;
+    height : 50px;
+    border-radius: 10px;    
+    transition: .8s;
+}
+
+#resetBtn:hover{
+    border-bottom-color : rgba(0,0,0,0.34);
+    text-shadow : 0 1px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+                0 2px 0 -1px rgba(0,0,0,0.13), 
+                0 3px 0 -1px rgba(0,0,0,0.08), 
+                0 3px 13px -1px rgba(0,0,0,0.21);
+    padding : 15px;
+    width : 100px;
+    height : 50px;
+    border-radius: 10px;    
 }

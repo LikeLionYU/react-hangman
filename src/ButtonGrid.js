@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from './Button';
 
-const ButtonGrid = ({guessedButton, isClickable}) => {
+const ButtonGrid = ({guessedButton, isClickable, answer}) => {
 
     let letters = [
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
-        'I', 'G', 'K', 'L', 'M', 'N', 'O', 'P',
+        'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
         'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
         'Y', 'Z'
     ];
@@ -21,6 +21,11 @@ const ButtonGrid = ({guessedButton, isClickable}) => {
         console.log(className);
         console.log("click");
         
+    }
+
+    if(answer){
+        className += ' clear';
+        console.log("clear");
     }
 
     return (

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Waiting from "./Waiting";
 import Hangman from "./Hangman";
-import './style.css';
+import './static/style.css';
 
 function App() {
   const [puzzle, setPuzzle] = useState("");
@@ -28,9 +28,18 @@ function App() {
     getPuzzle();
 }, []);
 
+  const reload = () => {
+    window.location.reload();
+  };
+
   return (
     <>
-      {loading ? <Waiting/> : <Hangman puzzle={puzzle} maxError={10}/>}
+      {loading ? <Waiting/> : 
+      <>
+        <Hangman puzzle={puzzle} maxError={10} reset={getPuzzle}/>
+        <button id="resetBtn" onClick={reload}>새로고침</button>
+      </>
+      }
     </>
   );
 }
